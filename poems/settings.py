@@ -58,9 +58,11 @@ CONCURRENT_REQUESTS_PER_IP = 16
 
 # Enable or disable extensions
 # See https://doc.scrapy.org/en/latest/topics/extensions.html
-#EXTENSIONS = {
-#    'scrapy.extensions.telnet.TelnetConsole': None,
-#}
+EXTENSIONS = {
+   'scrapy.extensions.telnet.TelnetConsole': None,
+   'poems.extensions.CloseSpiderRedis': 100,
+}
+CLOSE_SPIDER_AFTER_IDLE_TIMES = 5
 
 # Configure item pipelines
 # See https://doc.scrapy.org/en/latest/topics/item-pipeline.html
